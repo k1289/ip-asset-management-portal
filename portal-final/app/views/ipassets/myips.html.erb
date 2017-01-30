@@ -1,0 +1,25 @@
+<h> Listing your IP assets</h>
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>IP Description</th>
+         <th>Status</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+    <%  if @user.owners.any? %>
+      <% @user.owners.each do |k| %>
+         
+         <tr>
+            <td><%= @ipasset.find(k.ipasset_id).name %></td>
+            <td><%= @ipasset.find(k.ipasset_id).Description %></td>
+            <td><%= @ipasset.find(k.ipasset_id).status %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   <% end %>
+</table>

@@ -1,0 +1,7 @@
+<h3> Hi <td><%= current_user.email %></td> </h3>
+<body> Your user ID is <td><%= current_user.id %></td></body>
+<%= link_to 'All IPs', ipassets_index_path %> |
+<%= link_to 'My IPS', myips_path(current_user.id) %> |
+<%= link_to 'Upload New IP', ipassets_new_path %> |
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>
+

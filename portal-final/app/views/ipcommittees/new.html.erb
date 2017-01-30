@@ -1,0 +1,31 @@
+<%= form_for :ip_committee, url: ipcommittees_path do |f| %>
+ 
+  <% if @ip_committee.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@ip_committee.errors.count, "error") %> prohibited
+        this ipcommittee from being saved:
+      </h2>
+      <ul>
+        <% @ip_committee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :email   %><br>
+    <%= f.email_field :email  %>
+  </p>
+ 
+  <p>
+    <%= f.label :userId %><br>
+    <%= f.text_area :userId %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

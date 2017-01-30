@@ -1,0 +1,39 @@
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>User ID</th>
+         <th>IP Asset ID</th>
+         <th>IIITB Percentage of Stake</th>
+         <th>Owner's Percentage of Stake</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @owners.each do |owner| %>
+         
+         <tr>
+            <td><%= owner.user_id %></td>
+            <td><%= owner.ipasset_id %></td>
+            <td><%= owner.IIITBstakepercent %></td>
+            <td><%= owner.OwnerStakepercentage %></td>
+            
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+<%= link_to 'Add Owner', owners_new_path %> |
+<%= link_to 'Back', ipassets_index_path %>

@@ -1,0 +1,38 @@
+<h1>Ipassets</h1>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>IP Description</th>
+         <th>Status</th>
+         <th>click to approve</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @ipassets.each do |ipasset| %>
+         
+         <tr>
+            <td><%= ipasset.name %></td>
+            <td><%= ipasset.Description %></td>
+            <td><%= ipasset.status %></td>
+            <td><%= link_to "Approve ",:controller=>"ipassets",:action=>"validate",:ipasset=>ipasset%></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+

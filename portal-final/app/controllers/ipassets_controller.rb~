@@ -1,0 +1,32 @@
+class IpassetsController < ApplicationController
+  def index
+      @ipassets = Ipasset.all
+   end
+   
+   def new
+      @ipasset = Ipasset.new
+   end
+   
+   def create
+      @ipasset = Ipasset.new(ipasset_params)
+      
+      if @ipasset.save
+         redirect_to owners_new_path, notice: "Your IPAsset with id #{@ipasset.id} has been uploaded."
+      else
+         render "new"
+      end
+      
+   end
+   
+   
+   def destroy
+      @ipasset = Ipasset.find(params[:id])
+      @ipasset.destroy
+      redirect_to ipassets_path, notice:  "The ipasset #{@ipasset.name} has been deleted."
+   end
+   
+   private
+      def ipasset_params
+      params.require(:ipasset).permit(:name, :attachment, :Description, :status)
+   end
+end

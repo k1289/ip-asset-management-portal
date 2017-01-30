@@ -1,0 +1,19 @@
+<h1>Listing ip members</h1>
+ 
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+  </tr>
+ 
+  <% @ip_committees.each do |ip_committee| %>
+    <tr>
+      <td><%= ip_committee.email %></td>
+      <td><%= ip_committee.userId %></td>
+      <td><%= link_to 'Show', ipcommittee_path(ip_committee) %></td>
+      <td><%= link_to 'Destroy', ipcommittee_path(ip_committee),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

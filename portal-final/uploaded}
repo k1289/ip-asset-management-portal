@@ -1,0 +1,7 @@
+[WARNING] The model name 'ips' was recognized as a plural, using the singular 'ip' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      create    db/migrate/20161125131435_create_ips.rb
+      create    app/models/ip.rb
+      invoke    test_unit
+      create      test/models/ip_test.rb
+      create      test/fixtures/ips.yml

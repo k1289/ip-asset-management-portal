@@ -1,0 +1,4 @@
+class AddAttributesToIpassets < ActiveRecord::Migration
+  def change
+  end
+end

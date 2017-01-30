@@ -1,0 +1,28 @@
+<% if !@owner.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @owner.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @owner, html: { multipart: true } do |f| %>
+      <%= f.label :user_id %>
+      <%= f.number_field :user_id %>
+      <%= f.label :ipasset_id %>
+      <%= f.number_field :ipasset_id %>
+      <%= f.label :IIITBstakepercent %>
+      <%= f.number_field :IIITBstakepercent%>
+      <%= f.label :OwnerStakepercentage %>
+      <%= f.number_field :OwnerStakepercentage %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>
+
+
+<%= link_to 'Back', ipassets_index_path %>
